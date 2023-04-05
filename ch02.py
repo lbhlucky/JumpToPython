@@ -180,3 +180,116 @@ print(li.count(4))
 li.extend([6,9])
 print(li)
 
+# 튜플 - 리스트와 거의 동일
+# 특징 - ()로 둘러싼다 (리스트는 []로 둘러쌈)
+#      - 값을 바꿀 수 없다.
+#      - 괄호() 를 생략해도 무방하다.
+
+tup  = (1, 2, 'a', 'b')
+print(tup[0])
+print(tup[3])
+print(len(tup))
+
+# 딕셔너리 - key-value 쌍을 활용해 데이터에 접근
+#            다른 언어의 해시, 연관배열, JSON 과 동일
+#  {key1 : value1, key2 : value2, keyn : valuen}
+#
+# 딕셔너리 생성시 주의 사항
+# 1. 중복되는 Key 값을 설정해 놓으면 하나를 제외한 나머지 모두 무시됨
+# 2. Key에 리스트 쓸 수 없음
+#    단, 튜플은 사용 가능(값이 변하지 않기 때문)
+
+
+# 딕셔너리 쌍 추가, 삭제
+dic = {1:'a'}   # key 가 1인 곳에 value 'a' 저장
+print(dic)
+dic[2] = 'b'      # key 가 2인 곳에 value 'b' 추가
+print(dic)
+
+del dic[2]        # key 가 2인 key-value 쌍 삭제
+print(dic)
+
+# 딕셔너리 관련 함수
+
+# Key 리스트 만들기(keys)
+keys = {'name':'tom', 'age' : '30', 'gender' : 'man'}
+print(keys.keys())  # 딕셔너리 keys의 key 값만 추출해 리스트로 생성
+
+# value 리스트 만들기(values)
+keys = {'name':'tom', 'age' : '30', 'gender' : 'man'}
+print(keys.values())  # 딕셔너리 keys의 value 값만 추출해 리스트로 생성
+
+# Key-Value 쌍 얻기(items)
+print(keys.items())
+
+# Key로 Value 얻기 (get)
+print(keys.get('name'))
+
+# 해당 Key 가 딕셔너리 내에 있는지 확인 (in)
+print('gender' in keys) # 있으면 Ture 없으면 False
+
+# Key:Value 쌍 모두 지우기(clear)
+keys.clear()
+print(keys)
+
+# 집합 - 집합에 관련된 것을 쉽게 처리하기 위해 만든 자료형
+# set 키워드를 사용해 생성
+# 집합 자료형 특징
+# 1. 중복 허용 X
+# 2. 순서가 없다.
+
+s1 = set([1,2,3])
+print(s1)
+
+s2 = set('hello')
+print(s2)   # 중복 허용 하지않으므로 h, e, l. o
+
+test1 = set([1,2,3,4,5,6])
+test2 = set([4,5,6,7,8,9])
+
+# 교집합(intersection) - 두 집합 중 겹치는 부분만 출력
+print(test1 & test2)
+print(test1.intersection(test2))
+
+# 합집합(union) - 두 집합의 모든 부분 출력 (중복 제외)
+print(test1 | test2)
+print(test1.union(test2))
+
+# 차집합(difference) - 집합에서 겹치는 부분을 제외한 후 출력
+print(test1-test2)
+print(test1.difference(test2))
+
+# 집합 관련 함수
+# 값 1개 추가(add)
+test1.add(7)   # test1 집합에 요소 7 추가
+print(test1)
+
+# 값 여러개 추가(update)
+test2.update([10,11,12])    # test2 집합에 요소 10,11,12 추가
+print(test2)
+
+# 특정 값 제어(remove)
+test2.remove(11)    # test2 집합에서 요소 11 제거
+print(test2)
+
+# bool
+# 맞으면 True, 아니면 False
+
+# 문자열 - 내용이 있으면 Ture, 없으면 False
+#          ex) 'python' == True , '' == False
+# 리스트 - 데이터가 있으면, True, 없으면 False
+#          ex) [1,2,3] == True, [] == False
+# 튜플 - () == False
+# 딕셔너리 - {} == False
+# 숫자형 
+# 0 이 아닌 숫자 == True
+# 0 == False
+# None == False
+
+# 리스트 복사
+# [:] 사용
+# copy 모듈 사용
+test_list = [1,2,3]
+test_list2 = test_list[:]
+
+
